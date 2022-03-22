@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Добавить нового студента";
+}
+
+<h2>Добавить</h2>
+<h3>Студенты</h3>
+<table>
+    <tr><td><p>Студент</p></td><td><p>Баллы Java</p></td><td><p>Баллы CSharp</p></td><td><p>Баллы Python</p></td><td><p>Сумма баллов</p></td></tr>
+    @foreach (var c in ViewBag.Bids)
+    {
+        <tr><td><p>@c.StudentName</p></td><td><p>@c.RatingPointJava</p></td><td><p>@c.RatingPointCSharp</p></td><td><p>@c.RatingPointPython</p></td><td><p>@c.RatingPointSum</p></td></tr>
+}
+</table>
+
+<h3>Форма добавления нового студента</h3>
+<form method="post" action="">
+    <table>
+        <tr><td><p>Введите имя студента </p></td><td><input type="text" name="StudentName" /> </td></tr>
+
+        <tr><td><p>Введите баллы по Java</p></td><td><input type="text" name="RatingPointJava" /> </td></tr>
+        <tr><td><p>Введите баллы по CSharp </p></td><td><input type="text" name="RatingPointCSharp" /> </td></tr>
+        <tr><td><p>Введите баллы по Python</p></td><td><input type="text" name="RatingPointPython" /> </td></tr>
+        <tr>
+        <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+    </table>
+   
+
+</form>

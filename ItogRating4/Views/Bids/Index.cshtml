@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ItogRating4.Models.Bid>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Учет успеваемости</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RatingPointJava)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RatingPointCSharp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RatingPointPython)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RatingPointSum)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RatingPointJava)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RatingPointCSharp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RatingPointPython)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RatingPointSum)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BidId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BidId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BidId })
+            </td>
+        </tr>
+    }
+
+</table>
+

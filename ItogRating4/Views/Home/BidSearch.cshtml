@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ItogRating4.Models.Bid>
+    <div id = "results">  
+   <h4>Все студенты "@Model.First().StudentName"</h4>
+  <ul>
+    @foreach(var item in Model)        
+    {       
+      <li>
+      @item.StudentName @item.RatingPointSum
+      </li>     
+    }   
+  </ul>
+ </div>
